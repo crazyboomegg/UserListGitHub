@@ -19,14 +19,55 @@ class UserListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.red
+        addUI()
+        addConstraints()
         bind(to: viewModel)
         viewModel.getUserList()
     }
+    
     private func bind(to viewModel: UserListViewModelType) {
         viewModel.userList.observe(on: self) { [weak self] _ in self?.updateUsers() }
     }
+    
     private func updateUsers() {
         print("dick", viewModel.userList.value)
+    }
+    
+    func setView() {
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.separatorStyle = .none
+        self.tableView.register(UserTableViewCell.self, forCellReuseIdentifier: "UserTableViewCell")
+    
+        if #available(iOS 11.0, *) {
+            self.tableView.contentInsetAdjustmentBehavior = .never
+        }
+        
+        if self.tableView.contentSize.height != 0 {
+            let indexPath = IndexPath(row: 0, section: 0)
+            self.tableView.cellForRow(at: indexPath)
+            self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        }
+    }
+    
+    
+    
+    private func addUI() {
+        baseView.addSubview(tableView)
+        self.view.addSubview(baseView)
+    }
+    
+    private func addConstraints() {
+        baseView.snp.makeConstraints { make in
+            make.left.right.top.bottom.equalToSuperview()
+        }
+        
+        tableView.snp.makeConstraints { make in
+            make.left.equalTo(baseView.snp.left).offset(0)
+            make.right.equalTo(baseView.snp.right).offset(0)
+            make.top.equalTo(baseView.snp.top).offset(0)
+            make.bottom.equalTo(baseView.snp.bottom).offset(0)
+        }
     }
     
     private var baseView: UIView = {
@@ -82,4 +123,22 @@ struct User: Decodable {
         case image = "avatar_url"
         case admin = "site_admin"
     }
+}
+
+
+extension UserListViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) 
+       // cell.bind(users: viewModel.users[indexPath.row])
+        
+        return cell
+    }
+    
+    
 }

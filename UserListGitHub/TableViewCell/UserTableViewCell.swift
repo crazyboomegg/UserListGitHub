@@ -15,6 +15,7 @@ class UserTableViewCell: UITableViewCell {
         addUI()
         addConstraints()
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -26,7 +27,6 @@ class UserTableViewCell: UITableViewCell {
         [profileImage, stackView].forEach { (view) in
             baseView.addSubview(view)
         }
-        
         contentView.addSubview(baseView)
     }
     
@@ -34,17 +34,14 @@ class UserTableViewCell: UITableViewCell {
         baseView.snp.makeConstraints { make in
             make.left.right.top.bottom.equalToSuperview()
         }
-        
         profileImage.snp.makeConstraints { make in
             make.left.equalTo(baseView.snp.left).offset(25)
             make.top.equalTo(baseView.snp.top).offset(15)
         }
-        
         stackView.snp.makeConstraints { make in
             make.left.equalTo(profileImage.snp.right).offset(5)
             make.centerY.equalTo(profileImage)
         }
-        
     }
     
     private var baseView: UIView = {
