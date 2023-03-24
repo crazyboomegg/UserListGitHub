@@ -13,11 +13,9 @@ class UserTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     private var baseView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 5
@@ -27,14 +25,12 @@ class UserTableViewCell: UITableViewCell {
         view.layer.shadowRadius = 5
         return view
     }()
-    
     private var profileImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "")
         imageView.layer.cornerRadius = 30
         return imageView
     }()
-    
     private var idLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
@@ -43,27 +39,22 @@ class UserTableViewCell: UITableViewCell {
         label.text = "江博弈"
         return label
     }()
-    
-    private var StaffView: UIView = {
+    private var adminView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 20
         view.backgroundColor = UIColor(hexString: "2986cc")
-        
         let label = UILabel.init()
         label.text = "STAFF"
         label.textColor = UIColor.white
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 18)
         view.addSubview(label)
-        
         label.snp.makeConstraints { make in
             make.centerY.equalTo(view)
             make.centerX.equalTo(view)
         }
-        
         return view
     }()
-    
     private var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
