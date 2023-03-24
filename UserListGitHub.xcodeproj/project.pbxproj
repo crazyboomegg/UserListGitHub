@@ -15,6 +15,7 @@
 		7DB0FBE729CDF80F0082969F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBE629CDF80F0082969F /* Observable.swift */; };
 		7DB0FBEA29CE3ECB0082969F /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBE929CE3ECB0082969F /* UserTableViewCell.swift */; };
 		7DB0FBED29CE44030082969F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7DB0FBEC29CE44030082969F /* SnapKit */; };
+		7DB0FBF029CE4BE40082969F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBEF29CE4BE40082969F /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		7DB0FBDE29CDE9040082969F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DB0FBE629CDF80F0082969F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		7DB0FBE929CE3ECB0082969F /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		7DB0FBEF29CE4BE40082969F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		7DB0FBCF29CDE9010082969F /* UserListGitHub */ = {
 			isa = PBXGroup;
 			children = (
+				7DB0FBEE29CE4BCA0082969F /* Extension */,
 				7DB0FBE829CE3E9F0082969F /* TableViewCell */,
 				7DB0FBE529CDF7C40082969F /* Common  */,
 				7DB0FBD029CDE9010082969F /* AppDelegate.swift */,
@@ -86,6 +89,14 @@
 				7DB0FBE929CE3ECB0082969F /* UserTableViewCell.swift */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		7DB0FBEE29CE4BCA0082969F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7DB0FBEF29CE4BE40082969F /* UIColor.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DB0FBE729CDF80F0082969F /* Observable.swift in Sources */,
+				7DB0FBF029CE4BE40082969F /* UIColor.swift in Sources */,
 				7DB0FBD529CDE9010082969F /* UserListViewController.swift in Sources */,
 				7DB0FBD129CDE9010082969F /* AppDelegate.swift in Sources */,
 				7DB0FBD329CDE9010082969F /* SceneDelegate.swift in Sources */,
