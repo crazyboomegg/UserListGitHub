@@ -13,11 +13,9 @@ class UserListViewController: UIViewController {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.red
@@ -29,10 +27,19 @@ class UserListViewController: UIViewController {
     }
     private func updateUsers() {
         print("dick", viewModel.userList.value)
-        
     }
+    
+    private var baseView: UIView = {
+        let view = UIView()
+        return view
+    }()
+    
+    private var tableView: UITableView = {
+        let tableView = UITableView()
+        return tableView
+    }()
 }
-       
+
 protocol UserListViewModelType {
     var userList: Observable<[User]> { get }
     func getUserList()

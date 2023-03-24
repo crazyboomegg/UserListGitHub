@@ -13,6 +13,8 @@
 		7DB0FBDA29CDE9040082969F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DB0FBD929CDE9040082969F /* Assets.xcassets */; };
 		7DB0FBDD29CDE9040082969F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB0FBDB29CDE9040082969F /* LaunchScreen.storyboard */; };
 		7DB0FBE729CDF80F0082969F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBE629CDF80F0082969F /* Observable.swift */; };
+		7DB0FBEA29CE3ECB0082969F /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBE929CE3ECB0082969F /* UserTableViewCell.swift */; };
+		7DB0FBED29CE44030082969F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7DB0FBEC29CE44030082969F /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,7 @@
 		7DB0FBDC29CDE9040082969F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DB0FBDE29CDE9040082969F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DB0FBE629CDF80F0082969F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		7DB0FBE929CE3ECB0082969F /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DB0FBED29CE44030082969F /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +60,7 @@
 		7DB0FBCF29CDE9010082969F /* UserListGitHub */ = {
 			isa = PBXGroup;
 			children = (
+				7DB0FBE829CE3E9F0082969F /* TableViewCell */,
 				7DB0FBE529CDF7C40082969F /* Common  */,
 				7DB0FBD029CDE9010082969F /* AppDelegate.swift */,
 				7DB0FBD229CDE9010082969F /* SceneDelegate.swift */,
@@ -75,6 +80,14 @@
 			path = "Common ";
 			sourceTree = "<group>";
 		};
+		7DB0FBE829CE3E9F0082969F /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7DB0FBE929CE3ECB0082969F /* UserTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -92,6 +105,9 @@
 			dependencies = (
 			);
 			name = UserListGitHub;
+			packageProductDependencies = (
+				7DB0FBEC29CE44030082969F /* SnapKit */,
+			);
 			productName = UserListGitHub;
 			productReference = 7DB0FBCD29CDE9010082969F /* UserListGitHub.app */;
 			productType = "com.apple.product-type.application";
@@ -120,6 +136,9 @@
 				Base,
 			);
 			mainGroup = 7DB0FBC429CDE9010082969F;
+			packageReferences = (
+				7DB0FBEB29CE44030082969F /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 7DB0FBCE29CDE9010082969F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -172,6 +191,7 @@
 				7DB0FBD529CDE9010082969F /* UserListViewController.swift in Sources */,
 				7DB0FBD129CDE9010082969F /* AppDelegate.swift in Sources */,
 				7DB0FBD329CDE9010082969F /* SceneDelegate.swift in Sources */,
+				7DB0FBEA29CE3ECB0082969F /* UserTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +403,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7DB0FBEB29CE44030082969F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7DB0FBEC29CE44030082969F /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7DB0FBEB29CE44030082969F /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7DB0FBC529CDE9010082969F /* Project object */;
 }
