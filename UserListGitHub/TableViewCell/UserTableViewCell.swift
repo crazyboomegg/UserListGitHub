@@ -12,10 +12,41 @@ import SnapKit
 class UserTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        addUI()
+        addConstraints()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    private func addUI() {
+        [idLabel, adminView].forEach { (view) in
+            stackView.addArrangedSubview(view)
+        }
+        [profileImage, stackView].forEach { (view) in
+            baseView.addSubview(view)
+        }
+        
+        contentView.addSubview(baseView)
+    }
+    
+    func addConstraints() {
+        baseView.snp.makeConstraints { make in
+            make.left.right.top.bottom.equalToSuperview()
+        }
+        
+        profileImage.snp.makeConstraints { make in
+            make.left.equalTo(baseView.snp.left).offset(25)
+            make.top.equalTo(baseView.snp.top).offset(15)
+        }
+        
+        stackView.snp.makeConstraints { make in
+            make.left.equalTo(profileImage.snp.right).offset(5)
+            make.centerY.equalTo(profileImage)
+        }
+        
+    }
+    
     private var baseView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 5
