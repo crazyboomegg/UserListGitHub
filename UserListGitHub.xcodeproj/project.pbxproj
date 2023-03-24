@@ -12,6 +12,7 @@
 		7DB0FBD529CDE9010082969F /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBD429CDE9010082969F /* UserListViewController.swift */; };
 		7DB0FBDA29CDE9040082969F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DB0FBD929CDE9040082969F /* Assets.xcassets */; };
 		7DB0FBDD29CDE9040082969F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB0FBDB29CDE9040082969F /* LaunchScreen.storyboard */; };
+		7DB0FBE729CDF80F0082969F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBE629CDF80F0082969F /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		7DB0FBD929CDE9040082969F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DB0FBDC29CDE9040082969F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DB0FBDE29CDE9040082969F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DB0FBE629CDF80F0082969F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		7DB0FBCF29CDE9010082969F /* UserListGitHub */ = {
 			isa = PBXGroup;
 			children = (
+				7DB0FBE529CDF7C40082969F /* Common  */,
 				7DB0FBD029CDE9010082969F /* AppDelegate.swift */,
 				7DB0FBD229CDE9010082969F /* SceneDelegate.swift */,
 				7DB0FBD429CDE9010082969F /* UserListViewController.swift */,
@@ -62,6 +65,14 @@
 				7DB0FBDE29CDE9040082969F /* Info.plist */,
 			);
 			path = UserListGitHub;
+			sourceTree = "<group>";
+		};
+		7DB0FBE529CDF7C40082969F /* Common  */ = {
+			isa = PBXGroup;
+			children = (
+				7DB0FBE629CDF80F0082969F /* Observable.swift */,
+			);
+			path = "Common ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DB0FBE729CDF80F0082969F /* Observable.swift in Sources */,
 				7DB0FBD529CDE9010082969F /* UserListViewController.swift in Sources */,
 				7DB0FBD129CDE9010082969F /* AppDelegate.swift in Sources */,
 				7DB0FBD329CDE9010082969F /* SceneDelegate.swift in Sources */,
