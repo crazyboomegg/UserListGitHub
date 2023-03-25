@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SnapKit
+import Kingfisher
 
 class UserTableViewCell: UITableViewCell {
     var user: User?
@@ -16,15 +17,16 @@ class UserTableViewCell: UITableViewCell {
         addUI()
         addConstraints()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func bind(users: UserViewModel) {
         self.idLabel.text = users.name
+        self.profileImage.kf.setImage(with: URL(string: users.image))
     }
-    
+
     private func addUI() {
         [idLabel, adminView].forEach { (view) in
             stackView.addArrangedSubview(view)
@@ -34,21 +36,23 @@ class UserTableViewCell: UITableViewCell {
         }
         contentView.addSubview(baseView)
     }
-    
+
     func addConstraints() {
         baseView.snp.makeConstraints { make in
             make.left.right.top.bottom.equalToSuperview()
         }
         profileImage.snp.makeConstraints { make in
             make.left.equalTo(baseView.snp.left).offset(25)
-            make.top.equalTo(baseView.snp.top).offset(15)
+            make.centerY.equalTo(baseView)
+            make.height.equalTo(60)
+            make.width.equalTo(60)
         }
         stackView.snp.makeConstraints { make in
-            make.left.equalTo(profileImage.snp.right).offset(5)
+            make.left.equalTo(profileImage.snp.right).offset(15)
             make.centerY.equalTo(profileImage)
         }
     }
-    
+
     private var baseView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 5
@@ -62,6 +66,7 @@ class UserTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "")
         imageView.layer.cornerRadius = 30
+        imageView.clipsToBounds = true
         return imageView
     }()
     private var idLabel: UILabel = {

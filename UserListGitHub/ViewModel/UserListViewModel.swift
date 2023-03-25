@@ -15,7 +15,7 @@ protocol UserListViewModelType {
 class UserListViewModel: UserListViewModelType {
     let userList: Observable<[UserViewModel]> = Observable([])
     func getUserList() {
-        let urlString = "https://api.github.com/users?since=20&per_page=100"
+        let urlString = "https://api.github.com/users?since=0&per_page=100"
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {

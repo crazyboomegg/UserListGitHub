@@ -25,7 +25,7 @@ class UserListViewController: UIViewController {
         bind(to: viewModel)
         viewModel.getUserList()
     }
-    
+
     private func bind(to viewModel: UserListViewModelType) {
         viewModel.userList.observe(on: self) { [weak self] _ in self?.updateUsers() }
     }
@@ -40,7 +40,7 @@ class UserListViewController: UIViewController {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.register(UserTableViewCell.self, forCellReuseIdentifier: "UserTableViewCell")
-
+        tableView.estimatedRowHeight = 100
         if #available(iOS 11.0, *) {
             tableView.contentInsetAdjustmentBehavior = .never
         }
@@ -94,5 +94,9 @@ extension UserListViewController: UITableViewDataSource, UITableViewDelegate {
                                                         return UITableViewCell() }
         cell.bind(users: viewModel.userList.value[indexPath.row])
         return cell
-    }    
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return self.tableView.estimatedRowHeight
+    }
 }
