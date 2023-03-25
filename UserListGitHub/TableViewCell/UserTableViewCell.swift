@@ -97,7 +97,7 @@ class UserTableViewCell: UITableViewCell {
         let view = UIView()
         view.layer.cornerRadius = 12
         view.backgroundColor = UIColor(hexString: "#2986cc")
-        
+
         let label = UILabel.init()
         label.text = "STAFF"
         label.textColor = UIColor.white
