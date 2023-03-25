@@ -17,6 +17,8 @@
 		7DB0FBED29CE44030082969F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7DB0FBEC29CE44030082969F /* SnapKit */; };
 		7DB0FBF029CE4BE40082969F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBEF29CE4BE40082969F /* UIColor.swift */; };
 		7DB0FBF329CE51FE0082969F /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBF229CE51FE0082969F /* UserListViewModel.swift */; };
+		7DB0FBF629CE52C40082969F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBF529CE52C40082969F /* User.swift */; };
+		7DB0FBF829CE62600082969F /* UserVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBF729CE62600082969F /* UserVIewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		7DB0FBE929CE3ECB0082969F /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		7DB0FBEF29CE4BE40082969F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		7DB0FBF229CE51FE0082969F /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
+		7DB0FBF529CE52C40082969F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7DB0FBF729CE62600082969F /* UserVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVIewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +68,11 @@
 		7DB0FBCF29CDE9010082969F /* UserListGitHub */ = {
 			isa = PBXGroup;
 			children = (
+				7DB0FBF429CE52B40082969F /* Model */,
 				7DB0FBF129CE51DE0082969F /* ViewModel */,
-				7DB0FBEE29CE4BCA0082969F /* Extension */,
 				7DB0FBE829CE3E9F0082969F /* TableViewCell */,
 				7DB0FBE529CDF7C40082969F /* Common  */,
+				7DB0FBEE29CE4BCA0082969F /* Extension */,
 				7DB0FBD029CDE9010082969F /* AppDelegate.swift */,
 				7DB0FBD229CDE9010082969F /* SceneDelegate.swift */,
 				7DB0FBD429CDE9010082969F /* UserListViewController.swift */,
@@ -106,8 +111,17 @@
 			isa = PBXGroup;
 			children = (
 				7DB0FBF229CE51FE0082969F /* UserListViewModel.swift */,
+				7DB0FBF729CE62600082969F /* UserVIewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7DB0FBF429CE52B40082969F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7DB0FBF529CE52C40082969F /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +226,9 @@
 				7DB0FBE729CDF80F0082969F /* Observable.swift in Sources */,
 				7DB0FBF029CE4BE40082969F /* UIColor.swift in Sources */,
 				7DB0FBF329CE51FE0082969F /* UserListViewModel.swift in Sources */,
+				7DB0FBF829CE62600082969F /* UserVIewModel.swift in Sources */,
 				7DB0FBD529CDE9010082969F /* UserListViewController.swift in Sources */,
+				7DB0FBF629CE52C40082969F /* User.swift in Sources */,
 				7DB0FBD129CDE9010082969F /* AppDelegate.swift in Sources */,
 				7DB0FBD329CDE9010082969F /* SceneDelegate.swift in Sources */,
 				7DB0FBEA29CE3ECB0082969F /* UserTableViewCell.swift in Sources */,

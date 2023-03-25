@@ -8,12 +8,12 @@
 import Foundation
 
 protocol UserListViewModelType {
-    var userList: Observable<[User]> { get }
+    var userList: Observable<[UserViewModel]> { get }
     func getUserList()
 }
 
 class UserListViewModel: UserListViewModelType {
-    let userList: Observable<[User]> = Observable([])
+    let userList: Observable<[UserViewModel]> = Observable([])
     func getUserList() {
         let urlString = "https://api.github.com/users?since=20&per_page=100"
         guard let url = URL(string: urlString) else { return }
@@ -31,10 +31,14 @@ class UserListViewModel: UserListViewModelType {
             do {
                 let decoder = JSONDecoder()
                 let jsondata = try decoder.decode([User].self, from: data)
-                self.userList.value = jsondata
+                // toViewModels是[User] 的擴充,分離UserListViewModel的formating職責
+                self.userList.value = jsondata.toViewModels
             } catch let error {
                 
             }
         }.resume()
     }
+    
+    
+    
 }

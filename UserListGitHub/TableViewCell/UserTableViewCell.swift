@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 
 class UserTableViewCell: UITableViewCell {
+    var user: User?
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addUI()
@@ -18,6 +19,10 @@ class UserTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func bind(users: UserViewModel) {
+        self.idLabel.text = users.name
     }
     
     private func addUI() {
