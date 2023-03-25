@@ -25,6 +25,11 @@ class UserTableViewCell: UITableViewCell {
     func bind(users: UserViewModel) {
         self.idLabel.text = users.name
         self.profileImage.kf.setImage(with: URL(string: users.image))
+        if users.admin {
+            adminView.isHidden = false
+        } else {
+            adminView.isHidden = true
+        }
     }
 
     private func addUI() {
@@ -53,6 +58,11 @@ class UserTableViewCell: UITableViewCell {
         stackView.snp.makeConstraints { make in
             make.left.equalTo(profileImage.snp.right).offset(15)
             make.centerY.equalTo(profileImage)
+            make.width.equalTo(100)
+        }
+        adminView.snp.makeConstraints { make in
+            make.height.equalTo(25)
+            make.width.equalTo(70)
         }
     }
 
@@ -85,8 +95,9 @@ class UserTableViewCell: UITableViewCell {
     }()
     private var adminView: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 20
-        view.backgroundColor = UIColor(hexString: "2986cc")
+        view.layer.cornerRadius = 12
+        view.backgroundColor = UIColor(hexString: "#2986cc")
+        
         let label = UILabel.init()
         label.text = "STAFF"
         label.textColor = UIColor.white
@@ -102,8 +113,8 @@ class UserTableViewCell: UITableViewCell {
     private var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.alignment = .fill
-        stackView.spacing = 3
+        stackView.alignment = .leading
+        stackView.spacing = 5
         return stackView
     }()
 }
