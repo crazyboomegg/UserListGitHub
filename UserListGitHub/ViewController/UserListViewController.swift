@@ -95,6 +95,13 @@ extension UserListViewController: UITableViewDataSource, UITableViewDelegate {
         cell.bind(users: viewModel.userList.value[indexPath.row])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedData = viewModel.userList.value[indexPath.row]
+        let vc = UserInfoViewController()
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.tableView.estimatedRowHeight

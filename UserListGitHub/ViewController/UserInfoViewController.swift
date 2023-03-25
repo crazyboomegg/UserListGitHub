@@ -13,10 +13,11 @@ class UserInfoViewController: UIViewController {
         super.viewDidLoad()
         addUI()
         addConstraint()
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: clearButton)
     }
 
     @objc func clear() {
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     
