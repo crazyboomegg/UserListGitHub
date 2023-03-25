@@ -16,13 +16,77 @@ class UserInfoViewController: UIViewController {
     }
 
     private func addUI() {
-        
+        [nameLabel, nickNameLabel].forEach { (view) in
+            nameStackView.addArrangedSubview(view)
+        }
+
+        [idLabel, adminView].forEach { (view) in
+            idStackView.addArrangedSubview(view)
+        }
+
+        [profileImage, nameStackView, lineView, personImage,
+         idStackView, locationImage, locationLabel, linkImage,
+         linkLabel].forEach { (view) in
+            baseView.addSubview(view)
+        }
+        self.view.addSubview(baseView)
     }
 
     private func addConstraints() {
-        
-    }
+        baseView.snp.makeConstraints { make in
+            make.left.right.top.bottom.equalToSuperview()
+        }
+  
+        profileImage.snp.makeConstraints { make in
+            make.centerX.equalTo(baseView)
+            make.top.equalTo(baseView.snp.top).offset(30)
+            make.height.equalTo(80)
+            make.width.equalTo(80)
+        }
  
+        nameStackView.snp.makeConstraints { make in
+            make.centerX.equalTo(profileImage)
+            make.top.equalTo(profileImage.snp.bottom).offset(3)
+        }
+ 
+        lineView.snp.makeConstraints { make in
+            make.centerX.equalTo(baseView)
+            make.left.equalTo(baseView.snp.left).offset(3)
+            make.right.equalTo(baseView.snp.right).offset(-3)
+            make.height.equalTo(1)
+        }
+    
+        personImage.snp.makeConstraints { make in
+            make.left.equalTo(baseView.snp.left).offset(3)
+            make.top.equalTo(lineView.snp.bottom).offset(15)
+        }
+
+        idStackView.snp.makeConstraints { make in
+            make.centerY.equalTo(profileImage)
+            make.left.equalTo(personImage.snp.right).offset(10)
+        }
+        
+        locationImage.snp.makeConstraints { make in
+            make.centerX.equalTo(personImage)
+            make.top.equalTo(personImage.snp.bottom).offset(30)
+        }
+     
+        locationLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(locationImage)
+            make.left.equalTo(locationImage.snp.right).offset(10)
+        }
+     
+        linkImage.snp.makeConstraints { make in
+            make.centerX.equalTo(locationImage)
+            make.top.equalTo(locationImage.snp.bottom).offset(30)
+        }
+  
+        linkLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(linkImage)
+            make.left.equalTo(linkImage.snp.right).offset(10)
+        }
+    }
+
     private var baseView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.blue
@@ -54,7 +118,7 @@ class UserInfoViewController: UIViewController {
         label.text = "nickname"
         return label
     }()
-  
+
     private var nameStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -69,7 +133,7 @@ class UserInfoViewController: UIViewController {
         return view
     }()
 
-    private var loginImage: UIImageView = {
+    private var personImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "person")
         return imageView
