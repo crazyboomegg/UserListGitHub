@@ -39,7 +39,10 @@ class UserTableViewCell: UITableViewCell {
 
     func addConstraints() {
         baseView.snp.makeConstraints { make in
-            make.left.right.top.bottom.equalToSuperview()
+            make.left.equalTo(contentView.snp.left).offset(1)
+            make.right.equalTo(contentView.snp.right).offset(-1)
+            make.top.equalTo(contentView.snp.top).offset(3)
+            make.bottom.equalTo(contentView.snp.bottom).offset(-3)
         }
         profileImage.snp.makeConstraints { make in
             make.left.equalTo(baseView.snp.left).offset(25)
@@ -55,13 +58,16 @@ class UserTableViewCell: UITableViewCell {
 
     private var baseView: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 5
+        view.layer.cornerRadius = 2
         view.backgroundColor = UIColor.white
-        view.layer.shadowOffset = CGSize(width: 1.5, height: 3)
-        view.layer.shadowOpacity = 0.2
-        view.layer.shadowRadius = 5
+        view.layer.shadowOffset = CGSize(width: 1.0, height: 1)
+        view.layer.shadowOpacity = 0.5
+        view.layer.shadowRadius = 1.5
+        view.layer.borderWidth = 0.5
+        view.layer.borderColor = UIColor.gray.cgColor
         return view
     }()
+
     private var profileImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "")

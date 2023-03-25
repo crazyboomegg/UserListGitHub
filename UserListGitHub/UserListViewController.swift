@@ -18,7 +18,7 @@ class UserListViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.red
+        view.backgroundColor = UIColor.white
         addUI()
         addConstraints()
         setView()
@@ -66,7 +66,7 @@ class UserListViewController: UIViewController {
         tableView.snp.makeConstraints { make in
             make.left.equalTo(baseView.snp.left).offset(0)
             make.right.equalTo(baseView.snp.right).offset(0)
-            make.top.equalTo(baseView.snp.top).offset(0)
+            make.top.equalTo(baseView.snp.top).offset(60)
             make.bottom.equalTo(baseView.snp.bottom).offset(0)
         }
     }
