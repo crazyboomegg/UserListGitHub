@@ -1,18 +1,18 @@
 # UserListGitHub
 
 ## Process
-Initially, I spent some time studying the GitHub API documentation and clarifying the requirements. 
-I used Postman and the website to confirm the data and parameters. At first, 
-I tried using third-party libraries to retrieve GitHub API data, but was unsuccessful. 
-Later, I started a new project and used the native method to access network data. 
-This took a lot of time, around 8 hours. In this project, I tried adding the Observerable method to MVVM, 
-which resulted in unexpected type errors, but I was able to resolve them all eventually.
+Initially, I spent some time studying the GitHub API documentation and clarifying the requirements.<br>
+I used Postman and the website to confirm the data and parameters. At first,<br>
+I tried using third-party libraries to retrieve GitHub API data, but was unsuccessful.<br>
+Later, I started a new project and used the native method to access network data.<br>
+This took a lot of time, around 8 hours. In this project, I tried adding the Observerable method to MVVM,<br>
+which resulted in unexpected type errors, but I was able to resolve them all eventually<br>
 
-Time spent:  
-  UI: Within 2 hours
-  Observerable: Over 12 hours
-  GitHub API documentation research: Over 1 hour
-  Network data processing: Over 8 hours
+Time spent:<br> 
+  UI: Within 2 hours<br>
+  Observerable: Over 12 hours<br>
+  GitHub API documentation research: Over 1 hour<br>
+  Network data processing: Over 8 hours<br>
 
 In this exercise, I tried and learned:
 
