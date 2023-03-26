@@ -9,7 +9,7 @@ This took a lot of time, around 8 hours. In this project, I tried adding the Obs
 which resulted in unexpected type errors, but I was able to resolve them all eventually<br>
 
 ## Time spent:<br> 
-  UI: Within 2 hours<br>
+  * UI: Within 2 hours<br>
   Observerable: Over 12 hours<br>
   GitHub API documentation research: Over 1 hour<br>
   Network data processing: Over 8 hours<br>
