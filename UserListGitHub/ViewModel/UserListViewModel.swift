@@ -12,7 +12,7 @@ protocol UserListViewModelType {
     func getUserList()
 }
 
-class UserListViewModel: UserListViewModelType {
+final class UserListViewModel: UserListViewModelType {
     let userList: Observable<[User]> = Observable([])
     func getUserList() {
         let urlString = "https://api.github.com/users?since=0&per_page=100"

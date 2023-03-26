@@ -13,7 +13,7 @@ protocol UserInfoPageViewModelType {
     
 }
 
-class UserInfoPageViewModel: UserInfoPageViewModelType {
+final class UserInfoPageViewModel: UserInfoPageViewModelType {
     let userInfo: Observable<UserInfo?> = Observable(.none)
 
     func getUserInfo(name: String) {

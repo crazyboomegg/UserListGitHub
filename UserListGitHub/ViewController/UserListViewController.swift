@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserListViewController: UIViewController {
+final class UserListViewController: UIViewController {
     let viewModel: UserListViewModelType
     init(_ viewModel: UserListViewModelType) {
         self.viewModel = viewModel

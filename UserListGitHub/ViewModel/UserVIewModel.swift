@@ -4,7 +4,7 @@
 //
 //  Created by 江柏毅 on 2023/3/25.
 //
-class User {
+final class User {
     var user: UserDataModel
 
     var name: String {
