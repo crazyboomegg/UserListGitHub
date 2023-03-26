@@ -97,6 +97,11 @@ final class UserInfoPageViewController: UIViewController {
             make.centerX.equalTo(profileImage)
             make.top.equalTo(profileImage.snp.bottom).offset(10)
         }
+        
+        nickNameLabel.snp.makeConstraints { make in
+            make.left.equalTo(baseView.snp.left).offset(50)
+            make.right.equalTo(baseView.snp.right).offset(-50)
+        }
 
         lineView.snp.makeConstraints { make in
             make.top.equalTo(nameStackView.snp.bottom).offset(20)
@@ -183,6 +188,7 @@ final class UserInfoPageViewController: UIViewController {
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = UIColor.black
+        label.numberOfLines = 0
         label.text = "nickname"
         return label
     }()
