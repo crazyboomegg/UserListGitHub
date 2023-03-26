@@ -8,15 +8,15 @@ Later, I started a new project and used the native method to access network data
 This took a lot of time, around 8 hours. In this project, I tried adding the Observerable method to MVVM,<br>
 which resulted in unexpected type errors, but I was able to resolve them all eventually<br>
 
-Time spent:<br> 
+## Time spent:<br> 
   UI: Within 2 hours<br>
   Observerable: Over 12 hours<br>
   GitHub API documentation research: Over 1 hour<br>
   Network data processing: Over 8 hours<br>
 
-In this exercise, I tried and learned:
+## In this exercise, I tried and learned:<br>
 
-Personal data URLs can be linked
-Adding Observerable to MVVM, which was my first time using this method.
-Reading the GitHub API documentation
+Personal data URLs can be linked<br>
+Adding Observerable to MVVM, which was my first time using this method.<br>
+Reading the GitHub API documentation<br>
 Rest API - Retrieving data from servers.
