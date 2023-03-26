@@ -9,6 +9,7 @@ import Kingfisher
 
 final class UserInfoPageViewController: UIViewController {
     var name = ""
+    var linkText = ""
     let viewModel: UserInfoPageViewModelType
     init(_ viewModel: UserInfoPageViewModelType) {
         self.viewModel = viewModel
@@ -31,16 +32,17 @@ final class UserInfoPageViewController: UIViewController {
     private func bind(to viewModel: UserInfoPageViewModelType) {
         viewModel.userInfo.observe(on: self) { [weak self] _ in self?.updateView() }
     }
-
+ 
     private func updateView() {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [self] in
             guard let userInfo = self.viewModel.userInfo.value else { return }
             self.profileImage.kf.setImage(with: URL(string: "\(userInfo.image ?? "" )"))
             self.nameLabel.text = userInfo.name
             self.nickNameLabel.text = userInfo.nickName
             self.loginNameLabel.text = userInfo.loginName
             self.locationLabel.text = userInfo.location
-            self.linkLabel.text = userInfo.link
+            linkLabelUpdate(netText: "\(userInfo.link ?? "")")
+            self.linkText = userInfo.link ?? ""
             if userInfo.admin == true {
                 self.adminView.isHidden = false
             } else {
@@ -48,6 +50,21 @@ final class UserInfoPageViewController: UIViewController {
             }
         }
     }
+
+    private func linkLabelUpdate(netText: String = "") {
+        self.linkLabel.text = netText
+        let attributedString = NSMutableAttributedString(string: netText)
+            attributedString.addAttribute(.link, value: "\(netText)", range: NSRange(location: 0, length: netText.count))
+        self.linkLabel.attributedText = attributedString
+        self.linkLabel.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.openLink(_:)))
+        self.linkLabel.addGestureRecognizer(tapGesture)
+    }
+
+    @objc func openLink(_ sender: UITapGestureRecognizer) {
+        guard let url = URL(string: self.linkText) else { return }
+            UIApplication.shared.open(url)
+        }
 
     func bind(name: String) {
         self.name = name
