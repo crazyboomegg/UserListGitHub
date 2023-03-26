@@ -1,12 +1,14 @@
 # UserListGitHub
 
 ## Process
-Initially, I spent some time studying the GitHub API documentation and clarifying the requirements.<br>
-I used Postman and the website to confirm the data and parameters. At first,<br>
-I tried using third-party libraries to retrieve GitHub API data, but was unsuccessful.<br>
-Later, I started a new project and used the native method to access network data.<br>
-This took a lot of time, around 8 hours. In this project, I tried adding the Observerable method to MVVM,<br>
-which resulted in unexpected type errors, but I was able to resolve them all eventually<br>
+Initially, I spent some time studying the GitHub API documentation and clarifying requirements.<br> 
+I used Postman and the web to confirm data and parameters,<br>  
+and attempted to obtain GitHub API data using a third-party library, but was unable to succeed.<br> 
+I then started a new project and used the native method for accessing network layer data,<br> 
+which took a lot of time in processing network data. In total, I spent around 8 hours.<br> 
+In this project, I also attempted to install third-party libraries using Xcode SPM.<br> 
+I tried to use the Observerable method in MVVM, but encountered many unexpected type errors,<br> 
+which were eventually resolved one by one.
 
 ## Time spent:<br> 
   * UI: Within 2 hours<br>
