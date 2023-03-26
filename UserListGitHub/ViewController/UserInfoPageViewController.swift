@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import Kingfisher
 
-class UserInfoPageViewController: UIViewController {
+final class UserInfoPageViewController: UIViewController {
     var name = ""
     let viewModel: UserInfoPageViewModelType
     init(_ viewModel: UserInfoPageViewModelType) {
@@ -35,17 +35,16 @@ class UserInfoPageViewController: UIViewController {
     }
 
     private func updateUsers() {
-        var viewModel = viewModel.userInfo.value as [UserInfoViewModel]
-        self.profileImage.kf.setImage(with: URL(string: viewModel.first?.image))
-        self.nameLabel.text = viewModel.first?.name
-        self.nickNameLabel.text = viewModel.first?.nickName
-        self.loginNameLabel.text = viewModel.first?.loginName
-        if viewModel.first?.admin == true {
+        guard let userInfo = viewModel.userInfo.value else { return }
+        self.profileImage.kf.setImage(with: URL(string: "\(userInfo.image ?? "" )"))
+        self.nameLabel.text = userInfo.name
+        self.nickNameLabel.text = userInfo.nickName
+        self.loginNameLabel.text = userInfo.loginName
+        if userInfo.admin == true {
             adminView.isHidden = false
         } else {
             adminView.isHidden = true
         }
-       // print("duck", viewModel.userInfo.value)
     }
 
     func bind(name: String) {

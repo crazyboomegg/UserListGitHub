@@ -32,7 +32,7 @@ class UserListViewController: UIViewController {
 
     private func updateUsers() {
         tableView.reloadData()
-        print("dick", viewModel.userList.value)
+        print(viewModel.userList.value)
     }
 
     func setView() {

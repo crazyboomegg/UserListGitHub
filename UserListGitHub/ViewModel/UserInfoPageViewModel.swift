@@ -8,12 +8,13 @@
 import Foundation
 
 protocol UserInfoPageViewModelType {
-    var userInfo: Observable<[UserInfoViewModel]> { get }
+    var userInfo: Observable<UserInfo?> { get }
     func getUserInfo(name: String)
+    
 }
 
 class UserInfoPageViewModel: UserInfoPageViewModelType {
-    let userInfo: Observable<[UserInfoViewModel]> = Observable([])
+    let userInfo: Observable<UserInfo?> = Observable(.none)
 
     func getUserInfo(name: String) {
         let urlString = "https://api.github.com/users/\(name)"
@@ -35,11 +36,9 @@ class UserInfoPageViewModel: UserInfoPageViewModelType {
                 if let jsonString = String(data: data, encoding: .utf8) {
                            print("JSON String: " + jsonString)
                        }
-                let jsondata = try decoder.decode(UserInfo.self, from: data)
+                let jsondata = try decoder.decode(UserInfoDataModel.self, from: data)
                 // toViewModels是[User] 的擴充,分離UserListViewModel的formating職責
-                var userInfoList = [UserInfoViewModel]()
-                userInfoList.append(UserInfoViewModel(userInfo: jsondata))
-                self.userInfo.value = userInfoList
+                self.userInfo.value = UserInfo(jsondata)
                 print("RRRR" + "\(jsondata)")
             } catch let error {
                 print("GGGG" + "\(error)")

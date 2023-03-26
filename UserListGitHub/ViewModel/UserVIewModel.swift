@@ -4,12 +4,8 @@
 //
 //  Created by 江柏毅 on 2023/3/25.
 //
-
-import Foundation
-import Metal
-
-class UserViewModel {
-    var user: User
+class User {
+    var user: UserDataModel
 
     var name: String {
        return user.name
@@ -23,12 +19,12 @@ class UserViewModel {
        return user.admin
     }
 
-    init(user: User) {
+    init(user: UserDataModel) {
         self.user = user
     }
 }
 // 只要是User的Array就
-extension Array where Element == User {
-    var toViewModels: [UserViewModel] { return map { UserViewModel(user: $0) }
+extension Array where Element == UserDataModel {
+    var toViewModels: [User] { return map { User(user: $0) }
     }
 }

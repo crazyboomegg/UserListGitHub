@@ -11,7 +11,7 @@ import SnapKit
 import Kingfisher
 
 class UserTableViewCell: UITableViewCell {
-    var user: User?
+    var user: UserDataModel?
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addUI()
@@ -22,7 +22,7 @@ class UserTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func bind(users: UserViewModel) {
+    func bind(users: User) {
         self.idLabel.text = users.name
         self.profileImage.kf.setImage(with: URL(string: users.image))
         if users.admin {
