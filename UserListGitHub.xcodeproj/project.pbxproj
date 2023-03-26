@@ -24,6 +24,7 @@
 		7DB0FC0029CFBC0B0082969F /* UserInfoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBFF29CFBC0A0082969F /* UserInfoDataModel.swift */; };
 		7DB0FC0229D088B80082969F /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FC0129D088B80082969F /* UserInfo.swift */; };
 		7DB0FC0429D0915F0082969F /* UserInfoPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FC0329D0915F0082969F /* UserInfoPageViewModel.swift */; };
+		7DB0FC0729D0E50C0082969F /* ChangeNameAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FC0629D0E50C0082969F /* ChangeNameAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		7DB0FBFF29CFBC0A0082969F /* UserInfoDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoDataModel.swift; sourceTree = "<group>"; };
 		7DB0FC0129D088B80082969F /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		7DB0FC0329D0915F0082969F /* UserInfoPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPageViewModel.swift; sourceTree = "<group>"; };
+		7DB0FC0629D0E50C0082969F /* ChangeNameAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		7DB0FBCF29CDE9010082969F /* UserListGitHub */ = {
 			isa = PBXGroup;
 			children = (
+				7DB0FC0529D0E4D80082969F /* UIView */,
 				7DB0FBFC29CF26EE0082969F /* ViewController */,
 				7DB0FBF429CE52B40082969F /* Model */,
 				7DB0FBF129CE51DE0082969F /* ViewModel */,
@@ -144,6 +147,14 @@
 				7DB0FBFD29CF27200082969F /* UserInfoPageViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		7DB0FC0529D0E4D80082969F /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				7DB0FC0629D0E50C0082969F /* ChangeNameAlert.swift */,
+			);
+			path = UIView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +269,7 @@
 				7DB0FBD129CDE9010082969F /* AppDelegate.swift in Sources */,
 				7DB0FBFE29CF27210082969F /* UserInfoPageViewController.swift in Sources */,
 				7DB0FBD329CDE9010082969F /* SceneDelegate.swift in Sources */,
+				7DB0FC0729D0E50C0082969F /* ChangeNameAlert.swift in Sources */,
 				7DB0FC0029CFBC0B0082969F /* UserInfoDataModel.swift in Sources */,
 				7DB0FBEA29CE3ECB0082969F /* UserTableViewCell.swift in Sources */,
 			);
