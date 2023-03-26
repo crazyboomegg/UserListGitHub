@@ -8,22 +8,21 @@
 import Foundation
 import Metal
 
-
 class UserViewModel {
     var user: User
-    
+
     var name: String {
-        return user.name 
+       return user.name
     }
-    
+
     var image: String {
-        return user.image 
+       return user.image
     }
-    
+
     var admin: Bool {
-        return user.admin 
+       return user.admin
     }
-    
+
     init(user: User) {
         self.user = user
     }
@@ -33,6 +32,3 @@ extension Array where Element == User {
     var toViewModels: [UserViewModel] { return map { UserViewModel(user: $0) }
     }
 }
-//extension User {
-//    var toViewModel: UserViewModel { return UserViewModel(user: self) }
-//}
