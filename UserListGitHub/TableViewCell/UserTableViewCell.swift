@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Kingfisher
 
-class UserTableViewCell: UITableViewCell {
+final class UserTableViewCell: UITableViewCell {
     var user: UserDataModel?
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

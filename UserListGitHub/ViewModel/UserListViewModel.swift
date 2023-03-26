@@ -34,7 +34,7 @@ final class UserListViewModel: UserListViewModelType {
                 // toViewModels是[User] 的擴充,分離UserListViewModel的formating職責
                 self.userList.value = jsondata.toViewModels
             } catch let error {
-       
+
             }
         }.resume()
     }

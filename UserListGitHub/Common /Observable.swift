@@ -4,9 +4,6 @@
 //
 //  Created by 江柏毅 on 2023/3/24.
 //
-
-import Dispatch
-
 public final class Observable<Value> {
     struct Observer<Value> {
         weak var observer: AnyObject?
@@ -34,8 +31,7 @@ public final class Observable<Value> {
 
     private func notifyObservers() {
         for observer in observers {
-            DispatchQueue.main.async { observer.block(self.value) }
+            observer.block(self.value)
         }
     }
 }
-

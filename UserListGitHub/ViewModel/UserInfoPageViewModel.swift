@@ -9,8 +9,7 @@ import Foundation
 
 protocol UserInfoPageViewModelType {
     var userInfo: Observable<UserInfo?> { get }
-    func getUserInfo(name: String)
-    
+    func getUserInfo(name: String) 
 }
 
 final class UserInfoPageViewModel: UserInfoPageViewModelType {
@@ -30,7 +29,7 @@ final class UserInfoPageViewModel: UserInfoPageViewModelType {
             guard let data = data else {
                 return
             }
-            
+        
             do {
                 let decoder = JSONDecoder()
                 if let jsonString = String(data: data, encoding: .utf8) {

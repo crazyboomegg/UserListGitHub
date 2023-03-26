@@ -31,7 +31,9 @@ final class UserListViewController: UIViewController {
     }
 
     private func updateUsers() {
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
         print(viewModel.userList.value)
     }
 
@@ -44,7 +46,6 @@ final class UserListViewController: UIViewController {
         if #available(iOS 11.0, *) {
             tableView.contentInsetAdjustmentBehavior = .never
         }
-
         if tableView.contentSize.height != 0 {
             let indexPath = IndexPath(row: 0, section: 0)
             tableView.cellForRow(at: indexPath)

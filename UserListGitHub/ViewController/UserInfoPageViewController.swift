@@ -4,8 +4,6 @@
 //
 //  Created by 江柏毅 on 2023/3/25.
 //
-
-import Foundation
 import UIKit
 import Kingfisher
 
@@ -31,19 +29,23 @@ final class UserInfoPageViewController: UIViewController {
     }
 
     private func bind(to viewModel: UserInfoPageViewModelType) {
-        viewModel.userInfo.observe(on: self) { [weak self] _ in self?.updateUsers() }
+        viewModel.userInfo.observe(on: self) { [weak self] _ in self?.updateView() }
     }
 
-    private func updateUsers() {
-        guard let userInfo = viewModel.userInfo.value else { return }
-        self.profileImage.kf.setImage(with: URL(string: "\(userInfo.image ?? "" )"))
-        self.nameLabel.text = userInfo.name
-        self.nickNameLabel.text = userInfo.nickName
-        self.loginNameLabel.text = userInfo.loginName
-        if userInfo.admin == true {
-            adminView.isHidden = false
-        } else {
-            adminView.isHidden = true
+    private func updateView() {
+        DispatchQueue.main.async {
+            guard let userInfo = self.viewModel.userInfo.value else { return }
+            self.profileImage.kf.setImage(with: URL(string: "\(userInfo.image ?? "" )"))
+            self.nameLabel.text = userInfo.name
+            self.nickNameLabel.text = userInfo.nickName
+            self.loginNameLabel.text = userInfo.loginName
+            self.locationLabel.text = userInfo.location
+            self.linkLabel.text = userInfo.link
+            if userInfo.admin == true {
+                self.adminView.isHidden = false
+            } else {
+                self.adminView.isHidden = true
+            }
         }
     }
 
@@ -153,7 +155,6 @@ final class UserInfoPageViewController: UIViewController {
 
    lazy private var clearButton: UIButton = {
         let button = UIButton()
-      //  let image = UIImage(systemName: "clear.fill")
         button.setImage(UIImage(named: "ic_close"), for: .normal)
         button.tintColor = UIColor.black
         button.addTarget(self, action: #selector(clear), for: .touchUpInside)
@@ -254,7 +255,7 @@ final class UserInfoPageViewController: UIViewController {
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = UIColor.black
-        label.text = "San fafafa"
+        label.text = "San"
         return label
     }()
 
