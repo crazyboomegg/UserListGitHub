@@ -65,6 +65,7 @@ final class UserInfoPageViewController: UIViewController {
         guard let url = URL(string: self.linkText) else { return }
             UIApplication.shared.open(url)
         }
+    
 
     func bind(name: String) {
         self.name = name
@@ -199,7 +200,7 @@ final class UserInfoPageViewController: UIViewController {
         label.text = "江博弈"
         return label
     }()
-
+    
     private var nickNameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center

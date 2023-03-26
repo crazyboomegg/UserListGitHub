@@ -14,6 +14,8 @@ protocol TextFieldAlertDelegate {
 class ChangeNameAlert: UIView {
     var textFieldMessage : String?
     var delegate : TextFieldAlertDelegate?
+    var keyboardHeight: CGFloat = 0
+
     override init(frame: CGRect) {
         super.init(frame: frame)
        commonInit()
@@ -28,9 +30,18 @@ class ChangeNameAlert: UIView {
         
     }
     
-    private func clickRight(_ sender: Any) {
+    @objc func clickRight(_ sender: Any) {
         textFieldMessage = self.textField.text
-        self.delegate?.returnTextFieldAlertValue(self, isConfirm: true, text: textFieldMessage ?? "空的")
+        self.delegate?.returnTextFieldAlertValue(self, isConfirm: true, text: textFieldMessage ?? "empty")
+    }
+    
+    @objc func clickLeft(_ sender: Any) {
+        UIView.animate(withDuration: 0.25) {
+        //    self.alpha = 0
+        } completion: { (_) in
+            self.delegate?.returnTextFieldAlertValue(self, isConfirm: false, text: " ")
+            self.removeFromSuperview()
+        }
     }
     
     private func addUI() {
@@ -42,9 +53,18 @@ class ChangeNameAlert: UIView {
     }
 
     private func addConstraints() {
+        scrollView.snp.makeConstraints { make in
+            make.left.right.top.bottom.equalToSuperview()
+        }
         
+        alertView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.height.equalTo(350)
+            make.width.equalTo(500)
+        }
     }
-    
+
     private var alertView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 10
@@ -59,7 +79,7 @@ class ChangeNameAlert: UIView {
         label.text = "Edit your name"
         return label
     }()
-    
+
     private var textField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
@@ -70,27 +90,27 @@ class ChangeNameAlert: UIView {
         textField.backgroundColor = UIColor.white
         return textField
     }()
-    
+
     private var leftButton: UIButton = {
         let button = UIButton()
         button.setTitle("Cancel", for: .normal)
         button.setTitleColor(UIColor(hexString: "#a6a6a6"), for: .normal)
         button.backgroundColor = UIColor(hexString: "#d4d4d4")
-        button.layer.masksToBounds = true // 設置按鈕圓角是否生效
-        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        button.layer.masksToBounds = true
+        button.addTarget(self, action: #selector(clickLeft), for: .touchUpInside)
         return button
     }()
-    
+
     private var rightButton: UIButton = {
         let button = UIButton()
         button.setTitle("Save", for: .normal)
         button.setTitleColor(UIColor(hexString: "#ffffff"), for: .normal)
         button.backgroundColor = UIColor(hexString: "#147edb")
-        button.layer.masksToBounds = true // 設置按鈕圓角是否生效
-        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        button.layer.masksToBounds = true
+        button.addTarget(self, action: #selector(clickRight), for: .touchUpInside)
         return button
     }()
-    
+
     private var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = false
