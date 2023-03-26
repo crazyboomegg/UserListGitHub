@@ -8,19 +8,45 @@
 import Foundation
 import UIKit
 
-class UserInfoViewController: UIViewController {
+class UserInfoPageViewController: UIViewController {
+    var name = ""
+    let viewModel: UserInfoPageViewModelType
+    init(_ viewModel: UserInfoPageViewModelType) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         addUI()
         addConstraint()
+        bind(to: viewModel)
+        viewModel.getUserInfo(name: name)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: clearButton)
+    }
+
+    private func bind(to viewModel: UserInfoPageViewModelType) {
+        viewModel.userInfo.observe(on: self) { [weak self] _ in self?.updateUsers() }
+    }
+
+    private func updateUsers() {
+        var viewModel = viewModel.userInfo.value as [UserInfoViewModel]
+        self.nameLabel.text = viewModel.first?.name
+       // print("duck", viewModel.userInfo.value)
+    }
+
+    func bind(name: String) {
+        self.name = name
     }
 
     @objc func clear() {
         navigationController?.popViewController(animated: true)
     }
-    
-    
+
     private func addUI() {
         [nameLabel, nickNameLabel].forEach { (view) in
             nameStackView.addArrangedSubview(view)

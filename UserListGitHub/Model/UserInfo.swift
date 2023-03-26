@@ -8,13 +8,13 @@
 import Foundation
 
 struct UserInfo: Decodable {
-    let image: String
-    let name: String
-    let nickName: String
-    let loginName: String
-    let admin: Bool
-    let location: String
-    let link: String
+    let image: String?
+    let name: String?
+    let nickName: String?
+    let loginName: String?
+    let admin: Bool?
+    let location: String?
+    let link: String?
     
     enum CodingKeys: String, CodingKey {
         case image = "avatar_url"

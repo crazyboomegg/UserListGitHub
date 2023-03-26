@@ -9,14 +9,10 @@ import Foundation
 
 protocol UserListViewModelType {
     var userList: Observable<[UserViewModel]> { get }
-    var UserInfor: Observable<UserInfo> { get }
     func getUserList()
-    func getUserInfo(name: String)
 }
 
 class UserListViewModel: UserListViewModelType {
-    let UserInfor: Observable<UserInfo> = Observable<UserInfo>(UserInfo(from: Decoder as! Decoder))
-    
     let userList: Observable<[UserViewModel]> = Observable([])
     func getUserList() {
         let urlString = "https://api.github.com/users?since=0&per_page=100"
@@ -42,9 +38,4 @@ class UserListViewModel: UserListViewModelType {
             }
         }.resume()
     }
-    
-    func getUserInfo(name: String) {
-        
-    }
-    
 }

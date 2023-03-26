@@ -20,8 +20,10 @@
 		7DB0FBF629CE52C40082969F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBF529CE52C40082969F /* User.swift */; };
 		7DB0FBF829CE62600082969F /* UserVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBF729CE62600082969F /* UserVIewModel.swift */; };
 		7DB0FBFB29CF177D0082969F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7DB0FBFA29CF177D0082969F /* Kingfisher */; };
-		7DB0FBFE29CF27210082969F /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBFD29CF27200082969F /* UserInfoViewController.swift */; };
+		7DB0FBFE29CF27210082969F /* UserInfoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBFD29CF27200082969F /* UserInfoPageViewController.swift */; };
 		7DB0FC0029CFBC0B0082969F /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBFF29CFBC0A0082969F /* UserInfo.swift */; };
+		7DB0FC0229D088B80082969F /* UserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FC0129D088B80082969F /* UserInfoViewModel.swift */; };
+		7DB0FC0429D0915F0082969F /* UserInfoPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FC0329D0915F0082969F /* UserInfoPageViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +40,10 @@
 		7DB0FBF229CE51FE0082969F /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 		7DB0FBF529CE52C40082969F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7DB0FBF729CE62600082969F /* UserVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVIewModel.swift; sourceTree = "<group>"; };
-		7DB0FBFD29CF27200082969F /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		7DB0FBFD29CF27200082969F /* UserInfoPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPageViewController.swift; sourceTree = "<group>"; };
 		7DB0FBFF29CFBC0A0082969F /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		7DB0FC0129D088B80082969F /* UserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewModel.swift; sourceTree = "<group>"; };
+		7DB0FC0329D0915F0082969F /* UserInfoPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPageViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 			children = (
 				7DB0FBF229CE51FE0082969F /* UserListViewModel.swift */,
 				7DB0FBF729CE62600082969F /* UserVIewModel.swift */,
+				7DB0FC0129D088B80082969F /* UserInfoViewModel.swift */,
+				7DB0FC0329D0915F0082969F /* UserInfoPageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -135,7 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				7DB0FBD429CDE9010082969F /* UserListViewController.swift */,
-				7DB0FBFD29CF27200082969F /* UserInfoViewController.swift */,
+				7DB0FBFD29CF27200082969F /* UserInfoPageViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -242,13 +248,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DB0FBE729CDF80F0082969F /* Observable.swift in Sources */,
+				7DB0FC0429D0915F0082969F /* UserInfoPageViewModel.swift in Sources */,
 				7DB0FBF029CE4BE40082969F /* UIColor.swift in Sources */,
 				7DB0FBF329CE51FE0082969F /* UserListViewModel.swift in Sources */,
 				7DB0FBF829CE62600082969F /* UserVIewModel.swift in Sources */,
 				7DB0FBD529CDE9010082969F /* UserListViewController.swift in Sources */,
+				7DB0FC0229D088B80082969F /* UserInfoViewModel.swift in Sources */,
 				7DB0FBF629CE52C40082969F /* User.swift in Sources */,
 				7DB0FBD129CDE9010082969F /* AppDelegate.swift in Sources */,
-				7DB0FBFE29CF27210082969F /* UserInfoViewController.swift in Sources */,
+				7DB0FBFE29CF27210082969F /* UserInfoPageViewController.swift in Sources */,
 				7DB0FBD329CDE9010082969F /* SceneDelegate.swift in Sources */,
 				7DB0FC0029CFBC0B0082969F /* UserInfo.swift in Sources */,
 				7DB0FBEA29CE3ECB0082969F /* UserTableViewCell.swift in Sources */,
