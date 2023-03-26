@@ -15,7 +15,7 @@ struct UserInfo: Decodable {
     let admin: Bool?
     let location: String?
     let link: String?
-    
+
     enum CodingKeys: String, CodingKey {
         case image = "avatar_url"
         case name = "name"

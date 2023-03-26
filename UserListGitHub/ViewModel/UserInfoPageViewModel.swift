@@ -14,7 +14,7 @@ protocol UserInfoPageViewModelType {
 
 class UserInfoPageViewModel: UserInfoPageViewModelType {
     let userInfo: Observable<[UserInfoViewModel]> = Observable([])
-  
+
     func getUserInfo(name: String) {
         let urlString = "https://api.github.com/users/\(name)"
         guard let url = URL(string: urlString) else { return }

@@ -82,8 +82,6 @@ class UserListViewController: UIViewController {
     }()
 }
 
-
-
 extension UserListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.userList.value.count

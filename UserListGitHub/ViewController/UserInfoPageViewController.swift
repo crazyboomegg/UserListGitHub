@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 class UserInfoPageViewController: UIViewController {
     var name = ""
@@ -35,7 +36,15 @@ class UserInfoPageViewController: UIViewController {
 
     private func updateUsers() {
         var viewModel = viewModel.userInfo.value as [UserInfoViewModel]
+        self.profileImage.kf.setImage(with: URL(string: viewModel.first?.image))
         self.nameLabel.text = viewModel.first?.name
+        self.nickNameLabel.text = viewModel.first?.nickName
+        self.loginNameLabel.text = viewModel.first?.loginName
+        if viewModel.first?.admin == true {
+            adminView.isHidden = false
+        } else {
+            adminView.isHidden = true
+        }
        // print("duck", viewModel.userInfo.value)
     }
 
@@ -52,7 +61,7 @@ class UserInfoPageViewController: UIViewController {
             nameStackView.addArrangedSubview(view)
         }
 
-        [idLabel, adminView].forEach { (view) in
+        [loginNameLabel, adminView].forEach { (view) in
             idStackView.addArrangedSubview(view)
         }
 
@@ -199,7 +208,7 @@ class UserInfoPageViewController: UIViewController {
         return imageView
     }()
 
-    private var idLabel: UILabel = {
+    private var loginNameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 16)
