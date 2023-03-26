@@ -16,7 +16,7 @@ which were eventually resolved one by one.
   * GitHub API documentation research: Over 1 hour<br>
   * Network data processing: Over 8 hours<br>
   * Xcode SPM: 1 hours
-## n this exercise, I tried and learned:<br>
+## In this exercise, I tried and learned:<br>
 
 * Personal data URLs can be linked<br>
 * Adding Observerable to MVVM, which was my first time using this method.<br>
