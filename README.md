@@ -10,13 +10,13 @@ which resulted in unexpected type errors, but I was able to resolve them all eve
 
 ## Time spent:<br> 
   * UI: Within 2 hours<br>
-  Observerable: Over 12 hours<br>
-  GitHub API documentation research: Over 1 hour<br>
-  Network data processing: Over 8 hours<br>
+  * Observerable: Over 12 hours<br>
+  * GitHub API documentation research: Over 1 hour<br>
+  * Network data processing: Over 8 hours<br>
 
 ## In this exercise, I tried and learned:<br>
 
-Personal data URLs can be linked<br>
-Adding Observerable to MVVM, which was my first time using this method.<br>
-Reading the GitHub API documentation<br>
-Rest API - Retrieving data from servers.
+* Personal data URLs can be linked<br>
+* Adding Observerable to MVVM, which was my first time using this method.<br>
+* Reading the GitHub API documentation<br>
+* Rest API - Retrieving data from servers.
