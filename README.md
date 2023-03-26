@@ -8,11 +8,11 @@ Later, I started a new project and used the native method to access network data
 This took a lot of time, around 8 hours. In this project, I tried adding the Observerable method to MVVM, 
 which resulted in unexpected type errors, but I was able to resolve them all eventually.
 
-Time spent:
-UI: Within 2 hours
-Observerable: Over 12 hours
-GitHub API documentation research: Over 1 hour
-Network data processing: Over 8 hours
+Time spent:  
+  UI: Within 2 hours
+  Observerable: Over 12 hours
+  GitHub API documentation research: Over 1 hour
+  Network data processing: Over 8 hours
 
 In this exercise, I tried and learned:
 
