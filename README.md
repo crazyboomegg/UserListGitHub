@@ -2,7 +2,7 @@
 
 ## Process
 Initially, I spent some time studying the GitHub API documentation and clarifying requirements.<br> 
-I used Postman and the web to confirm data and parameters,<br>  
+I used Postman and the web to confirm data and parameters,<br>
 and attempted to obtain GitHub API data using a third-party library, but was unable to succeed.<br> 
 I then started a new project and used the native method for accessing network layer data,<br> 
 which took a lot of time in processing network data. In total, I spent around 8 hours.<br> 
