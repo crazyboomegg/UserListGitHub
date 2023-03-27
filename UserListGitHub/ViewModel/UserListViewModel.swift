@@ -14,8 +14,34 @@ protocol UserListViewModelType {
 
 final class UserListViewModel: UserListViewModelType {
     let userList: Observable<[User]> = Observable([])
+    let repository: UserRepositoryType
+    init(repository: UserRepositoryType) {
+        self.repository = repository
+    }
     func getUserList() {
         let urlString = "https://api.github.com/users?since=0&per_page=100"
+        repository.getUserList(urlString: urlString) { result in
+            switch result {
+            case .success(let value):
+                self.userList.value = value
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+}
+//protocol APIService {
+//    func request<T: Decodable>()  {
+//
+//    }
+//}
+
+protocol UserRepositoryType {
+    func getUserList(urlString: String, completion: @escaping(Result<[User], Error>) -> Void )
+}
+
+struct UserRepository: UserRepositoryType {
+    func getUserList(urlString: String, completion: @escaping(Result<[User], Error>) -> Void ) {
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
@@ -32,10 +58,21 @@ final class UserListViewModel: UserListViewModelType {
                 let decoder = JSONDecoder()
                 let jsondata = try decoder.decode([UserDataModel].self, from: data)
                 // toViewModels是[User] 的擴充,分離UserListViewModel的formating職責
-                self.userList.value = jsondata.toViewModels
+                completion(.success(jsondata.toViewModels))
             } catch let error {
-
+                completion(.failure(error))
             }
         }.resume()
+
+    }
+    
+}
+
+struct UserListRequest: Encodable {
+    let since: Int
+    let perPage: Int
+    enum CodingKeys: String, CodingKey {
+        case since
+        case perPage = "per_page"
     }
 }
