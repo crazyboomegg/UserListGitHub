@@ -65,7 +65,7 @@ struct UserRepository: UserRepositoryType {
         }.resume()
 
     }
-    
+
 }
 
 struct UserListRequest: Encodable {
