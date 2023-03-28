@@ -9,11 +9,13 @@ import Foundation
 
 protocol UserListViewModelType {
     var userList: Observable<[User]> { get }
+    var error: Observable<String?> { get }
     func getUserList()
 }
 
 final class UserListViewModel: UserListViewModelType {
     let userList: Observable<[User]> = Observable([])
+    let error: Observable<String?> = Observable(.none)
     let repository: UserRepositoryType
     init(repository: UserRepositoryType) {
         self.repository = repository
@@ -25,6 +27,7 @@ final class UserListViewModel: UserListViewModelType {
             case .success(let value):
                 self.userList.value = value
             case .failure(let error):
+                self.error.value = error.localizedDescription
                 print(error)
             }
         }

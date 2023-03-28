@@ -22,19 +22,18 @@ class UserListViewModelTests: XCTestCase {
         }
         func getUserList(urlString: String, completion: @escaping (Result<[User], Error>) -> Void) {
             if let error = error {
-                completion(.failure(error))
                 failedExpectation?.fulfill()
+                completion(.failure(error))
             }
             if let value = value {
-                completion(.success(value))
                 successExpectation?.fulfill()
+                completion(.success(value))
             }
         }
-   
     }
-    func test_getUserListSuccess_getUserListData() {
+    func test_getUserListSuccess_get1UserListData() {
         // Given
-        let value = [User(user: UserDataModel(name: "MockName", image: "MockName", admin: true))]
+        let value = [User(user: UserDataModel(name: "MockName", image: "MockImage", admin: true))]
         let expectation = expectation(description: "should get data successfully")
         let repo = MockUserRepository(value: value, error: nil, success: expectation)
         let sut = UserListViewModel(repository: repo)
@@ -42,8 +41,40 @@ class UserListViewModelTests: XCTestCase {
         sut.getUserList()
         // Then
         XCTAssertEqual(sut.userList.value.count, 1)
+        XCTAssertEqual(sut.userList.value.first?.name, "MockName")
+        XCTAssertEqual(sut.userList.value.first?.image, "MockImage")
+        XCTAssertEqual(sut.userList.value.first?.admin, true)
         wait(for: [expectation], timeout: 0.5)
     }
     
+    func test_getUserListSuccess_get2UserListData() {
+        // Given
+        let value = [User(user: UserDataModel(name: "MockName1", image: "MockImage1", admin: true)),
+                     User(user: UserDataModel(name: "MockName2", image: "MockImage2", admin: true))
+        ]
+        let expectation = expectation(description: "should get data successfully")
+        let repo = MockUserRepository(value: value, error: nil, success: expectation)
+        let sut = UserListViewModel(repository: repo)
+        // When
+        sut.getUserList()
+        // Then
+        XCTAssertEqual(sut.userList.value.count, 2)
+        wait(for: [expectation], timeout: 0.5)
+    }
+    enum MockError: Error {
+        case badResponse
+    }
+        
+    func test_getUserListfailed_getError() {
+        // Given
+        let expectation = expectation(description: "should get error")
+        let repo = MockUserRepository(value: nil, error: MockError.badResponse, failed: expectation)
+        let sut = UserListViewModel(repository: repo)
+        // When
+        sut.getUserList()
+        // Then
+        XCTAssertEqual(sut.error.value, MockError.badResponse.localizedDescription)
+        wait(for: [expectation], timeout: 0.5)
+    }
 }
 
