@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7D07463429D19A6C009134B8 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D07463329D19A6C009134B8 /* EndPoint.swift */; };
 		7D07463C29D2E54A009134B8 /* UserListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D07463B29D2E54A009134B8 /* UserListViewModelTests.swift */; };
+		7D07464329D44749009134B8 /* UserInfoPageViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D07464229D44749009134B8 /* UserInfoPageViewModelTests.swift */; };
+		7D07464629D451AE009134B8 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D07464529D451AE009134B8 /* UserRepository.swift */; };
+		7D07464829D47D66009134B8 /* MockUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D07464729D47D66009134B8 /* MockUserRepository.swift */; };
 		7DB0FBD129CDE9010082969F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBD029CDE9010082969F /* AppDelegate.swift */; };
 		7DB0FBD329CDE9010082969F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBD229CDE9010082969F /* SceneDelegate.swift */; };
 		7DB0FBD529CDE9010082969F /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBD429CDE9010082969F /* UserListViewController.swift */; };
@@ -43,6 +46,9 @@
 		7D07463329D19A6C009134B8 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		7D07463929D2E54A009134B8 /* UserListViewModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserListViewModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D07463B29D2E54A009134B8 /* UserListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelTests.swift; sourceTree = "<group>"; };
+		7D07464229D44749009134B8 /* UserInfoPageViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPageViewModelTests.swift; sourceTree = "<group>"; };
+		7D07464529D451AE009134B8 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		7D07464729D47D66009134B8 /* MockUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserRepository.swift; sourceTree = "<group>"; };
 		7DB0FBCD29CDE9010082969F /* UserListGitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserListGitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB0FBD029CDE9010082969F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DB0FBD229CDE9010082969F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,19 +97,29 @@
 			path = Infrastructure;
 			sourceTree = "<group>";
 		};
-		7D07463A29D2E54A009134B8 /* UserListViewModelTests */ = {
+		7D07463A29D2E54A009134B8 /* UserListGitHubUnitTests */ = {
 			isa = PBXGroup;
 			children = (
 				7D07463B29D2E54A009134B8 /* UserListViewModelTests.swift */,
+				7D07464229D44749009134B8 /* UserInfoPageViewModelTests.swift */,
+				7D07464729D47D66009134B8 /* MockUserRepository.swift */,
 			);
-			path = UserListViewModelTests;
+			path = UserListGitHubUnitTests;
+			sourceTree = "<group>";
+		};
+		7D07464429D45182009134B8 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				7D07464529D451AE009134B8 /* UserRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		7DB0FBC429CDE9010082969F = {
 			isa = PBXGroup;
 			children = (
 				7DB0FBCF29CDE9010082969F /* UserListGitHub */,
-				7D07463A29D2E54A009134B8 /* UserListViewModelTests */,
+				7D07463A29D2E54A009134B8 /* UserListGitHubUnitTests */,
 				7DB0FBCE29CDE9010082969F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -120,6 +136,7 @@
 		7DB0FBCF29CDE9010082969F /* UserListGitHub */ = {
 			isa = PBXGroup;
 			children = (
+				7D07464429D45182009134B8 /* Repository */,
 				7D07463129D199FB009134B8 /* Infrastructure */,
 				7DB0FC0529D0E4D80082969F /* UIView */,
 				7DB0FBFC29CF26EE0082969F /* ViewController */,
@@ -329,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D07464329D44749009134B8 /* UserInfoPageViewModelTests.swift in Sources */,
 				7D07463C29D2E54A009134B8 /* UserListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +358,7 @@
 				7DB0FBE729CDF80F0082969F /* Observable.swift in Sources */,
 				7DB0FC0429D0915F0082969F /* UserInfoPageViewModel.swift in Sources */,
 				7DB0FBF029CE4BE40082969F /* UIColor.swift in Sources */,
+				7D07464829D47D66009134B8 /* MockUserRepository.swift in Sources */,
 				7DB0FBF329CE51FE0082969F /* UserListViewModel.swift in Sources */,
 				7DB0FBF829CE62600082969F /* UserVIewModel.swift in Sources */,
 				7DB0FBD529CDE9010082969F /* UserListViewController.swift in Sources */,
@@ -351,6 +370,7 @@
 				7DB0FC0729D0E50C0082969F /* ChangeNameAlert.swift in Sources */,
 				7D07463429D19A6C009134B8 /* EndPoint.swift in Sources */,
 				7DB0FC0029CFBC0B0082969F /* UserInfoDataModel.swift in Sources */,
+				7D07464629D451AE009134B8 /* UserRepository.swift in Sources */,
 				7DB0FBEA29CE3ECB0082969F /* UserTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
