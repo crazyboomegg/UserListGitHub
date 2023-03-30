@@ -10,10 +10,24 @@ import XCTest
 
 class UserInfoPageViewModelTests: XCTestCase {
     func test_getUserInfoSuccess_getUserInfoData() {
-        let value = UserInfo(UserInfoDataModel(image: "MockImage", name: nil, nickName: "MockName", loginName: nil, admin: nil, location: nil, link: nil))
+        // Given
+        let value = UserInfo(UserInfoDataModel(image: "MockImage",
+                                               name: "MockName",
+                                               nickName: "MockNickName",
+                                               loginName: nil,
+                                               admin: nil,
+                                               location: nil,
+                                               link: nil))
         let expectation = expectation(description: "should get UserInfo data successfully")
         // system under testing
-      //  let sut = UserInfoPageViewModel(repository: MockUserRepository())
+        let repository = MockUserInfoRepository(value: value, error: nil, success: expectation)
+        let sut = UserInfoPageViewModel(repository: repository)
+        // When
+        sut.getUserInfo(name: "Mock")
+        // Then
+        XCTAssertEqual(sut.userInfo.value?.name, "MockName")
+        XCTAssertEqual(sut.userInfo.value?.image, "MockImage")
+        XCTAssertEqual(sut.userInfo.value?.nickName, "MockNickName")
+        wait(for: [expectation], timeout: 0.5)
     }
-    
 }

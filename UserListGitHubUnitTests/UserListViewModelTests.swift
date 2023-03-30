@@ -14,7 +14,7 @@ class UserListViewModelTests: XCTestCase {
         // Given
         let value = [User(user: UserDataModel(name: "MockName", image: "MockImage", admin: true))]
         let expectation = expectation(description: "should get data successfully")
-        let repo = MockUserRepository(value: value, error: nil, success: expectation)
+        let repo = MockUserListRepository(value: value, error: nil, success: expectation)
         let sut = UserListViewModel(repository: repo)
         // When
         sut.getUserList()
@@ -32,7 +32,7 @@ class UserListViewModelTests: XCTestCase {
                      User(user: UserDataModel(name: "MockName2", image: "MockImage2", admin: true))
         ]
         let expectation = expectation(description: "should get data successfully")
-        let repo = MockUserRepository(value: value, error: nil, success: expectation)
+        let repo = MockUserListRepository(value: value, error: nil, success: expectation)
         let sut = UserListViewModel(repository: repo)
         // When
         sut.getUserList()
@@ -47,7 +47,7 @@ class UserListViewModelTests: XCTestCase {
     func test_getUserListfailed_getError() {
         // Given
         let expectation = expectation(description: "should get error")
-        let repo = MockUserRepository(value: nil, error: MockError.badResponse, failed: expectation)
+        let repo = MockUserListRepository(value: nil, error: MockError.badResponse, failed: expectation)
         let sut = UserListViewModel(repository: repo)
         // When
         sut.getUserList()

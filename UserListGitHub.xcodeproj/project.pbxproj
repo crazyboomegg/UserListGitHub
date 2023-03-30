@@ -11,8 +11,9 @@
 		7D07463C29D2E54A009134B8 /* UserListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D07463B29D2E54A009134B8 /* UserListViewModelTests.swift */; };
 		7D07464329D44749009134B8 /* UserInfoPageViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D07464229D44749009134B8 /* UserInfoPageViewModelTests.swift */; };
 		7D07464629D451AE009134B8 /* UserListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D07464529D451AE009134B8 /* UserListRepository.swift */; };
-		7D07464929D48348009134B8 /* MockUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D07464729D47D66009134B8 /* MockUserRepository.swift */; };
+		7D07464929D48348009134B8 /* MockUserListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D07464729D47D66009134B8 /* MockUserListRepository.swift */; };
 		7D20FFE029D58F2E00CA73A5 /* UserInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D20FFDF29D58F2E00CA73A5 /* UserInfoRepository.swift */; };
+		7D20FFE229D5970300CA73A5 /* MockUserInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D20FFE129D5970300CA73A5 /* MockUserInfoRepository.swift */; };
 		7DB0FBD129CDE9010082969F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBD029CDE9010082969F /* AppDelegate.swift */; };
 		7DB0FBD329CDE9010082969F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBD229CDE9010082969F /* SceneDelegate.swift */; };
 		7DB0FBD529CDE9010082969F /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0FBD429CDE9010082969F /* UserListViewController.swift */; };
@@ -49,8 +50,9 @@
 		7D07463B29D2E54A009134B8 /* UserListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelTests.swift; sourceTree = "<group>"; };
 		7D07464229D44749009134B8 /* UserInfoPageViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPageViewModelTests.swift; sourceTree = "<group>"; };
 		7D07464529D451AE009134B8 /* UserListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListRepository.swift; sourceTree = "<group>"; };
-		7D07464729D47D66009134B8 /* MockUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserRepository.swift; sourceTree = "<group>"; };
+		7D07464729D47D66009134B8 /* MockUserListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserListRepository.swift; sourceTree = "<group>"; };
 		7D20FFDF29D58F2E00CA73A5 /* UserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRepository.swift; sourceTree = "<group>"; };
+		7D20FFE129D5970300CA73A5 /* MockUserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserInfoRepository.swift; sourceTree = "<group>"; };
 		7DB0FBCD29CDE9010082969F /* UserListGitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserListGitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB0FBD029CDE9010082969F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DB0FBD229CDE9010082969F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,7 +106,8 @@
 			children = (
 				7D07463B29D2E54A009134B8 /* UserListViewModelTests.swift */,
 				7D07464229D44749009134B8 /* UserInfoPageViewModelTests.swift */,
-				7D07464729D47D66009134B8 /* MockUserRepository.swift */,
+				7D07464729D47D66009134B8 /* MockUserListRepository.swift */,
+				7D20FFE129D5970300CA73A5 /* MockUserInfoRepository.swift */,
 			);
 			path = UserListGitHubUnitTests;
 			sourceTree = "<group>";
@@ -349,7 +352,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D07464929D48348009134B8 /* MockUserRepository.swift in Sources */,
+				7D20FFE229D5970300CA73A5 /* MockUserInfoRepository.swift in Sources */,
+				7D07464929D48348009134B8 /* MockUserListRepository.swift in Sources */,
 				7D07464329D44749009134B8 /* UserInfoPageViewModelTests.swift in Sources */,
 				7D07463C29D2E54A009134B8 /* UserListViewModelTests.swift in Sources */,
 			);

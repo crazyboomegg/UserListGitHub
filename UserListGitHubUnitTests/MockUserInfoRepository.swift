@@ -1,29 +1,25 @@
 //
-//  MockUserRepository.swift
-//  UserListGitHub
+//  MockUserInfoRepository.swift
+//  UserListViewModelTests
 //
-//  Created by 江柏毅 on 2023/3/29.
+//  Created by 江柏毅 on 2023/3/30.
 //
 
 import XCTest
 @testable import UserListGitHub
 
-struct MockUserRepository: UserListRepositoryType {
-    func getUserInfo(urlString: String, completion: @escaping (Result<UserInfo, Error>) -> Void) {
-        
-    }
-    
-    let value: [User]?
+struct MockUserInfoRepository: UserInfoRepositoryType {
+    let value: UserInfo?
     let error: Error?
     let successExpectation: XCTestExpectation?
     let failedExpectation: XCTestExpectation?
-    init(value: [User]?, error: Error?, success: XCTestExpectation? = nil, failed: XCTestExpectation? = nil) {
+    init(value: UserInfo?, error: Error?, success: XCTestExpectation? = nil, failed: XCTestExpectation? = nil) {
         self.value = value
         self.error = error
         self.successExpectation = success
         self.failedExpectation = failed
     }
-    func getUserList(urlString: String, completion: @escaping (Result<[User], Error>) -> Void) {
+    func getUserInfo(urlString: String, completion: @escaping (Result<UserListGitHub.UserInfo, Error>) -> Void) {
         if let error = error {
             failedExpectation?.fulfill()
             completion(.failure(error))
