@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 protocol UserInfoPageViewModelType {
     var userInfo: Observable<UserInfo?> { get }
     func getUserInfo(name: String) 
@@ -15,8 +16,8 @@ protocol UserInfoPageViewModelType {
 final class UserInfoPageViewModel: UserInfoPageViewModelType {
     let userInfo: Observable<UserInfo?> = Observable(.none)
     let error: Observable<String?> = Observable(.none)
-    let repository: UserRepositoryType
-    init(repository: UserRepositoryType) {
+    let repository: UserInfoRepositoryType
+    init(repository: UserInfoRepositoryType) {
         self.repository = repository
     }
     func getUserInfo(name: String) {

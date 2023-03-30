@@ -97,8 +97,9 @@ extension UserListViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let name = viewModel.userList.value[indexPath.row].name
-
-        let viewController = UserInfoPageViewController(UserInfoPageViewModel())
+        let repository = UserInfoRepository()
+        let viewModel = UserInfoPageViewModel(repository: repository)
+        let viewController = UserInfoPageViewController(viewModel)
         viewController.bind(name: name)
         navigationController?.pushViewController(viewController, animated: true)
     }

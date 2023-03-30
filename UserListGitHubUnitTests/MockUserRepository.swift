@@ -8,7 +8,7 @@
 import XCTest
 @testable import UserListGitHub
 
-struct MockUserRepository: UserRepositoryType {
+struct MockUserRepository: UserListRepositoryType {
     func getUserInfo(urlString: String, completion: @escaping (Result<UserInfo, Error>) -> Void) {
         
     }

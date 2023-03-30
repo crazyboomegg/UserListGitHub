@@ -16,8 +16,8 @@ protocol UserListViewModelType {
 final class UserListViewModel: UserListViewModelType {
     var userList: Observable<[User]> = Observable([])
     let error: Observable<String?> = Observable(.none)
-    let repository: UserRepositoryType
-    init(repository: UserRepositoryType) {
+    let repository: UserListRepositoryType
+    init(repository: UserListRepositoryType) {
         self.repository = repository
     }
     func getUserList() {

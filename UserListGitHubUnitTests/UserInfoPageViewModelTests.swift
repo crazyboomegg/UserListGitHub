@@ -13,7 +13,7 @@ class UserInfoPageViewModelTests: XCTestCase {
         let value = UserInfo(UserInfoDataModel(image: "MockImage", name: nil, nickName: "MockName", loginName: nil, admin: nil, location: nil, link: nil))
         let expectation = expectation(description: "should get UserInfo data successfully")
         // system under testing
-//        let sut = UserInfoPageViewModel()
+      //  let sut = UserInfoPageViewModel(repository: MockUserRepository())
     }
     
 }
